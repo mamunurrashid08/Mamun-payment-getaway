@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamunur Rashid eShop - পেমেন্ট পেজ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="assets/mr-logo.jpg" alt="Mamunur Rashid eShop Logo" class="logo">
+            <h1>Mamunur Rashid eShop</h1>
+            <p>আপনার বিশ্বস্ত অনলাইন শপিং ডেস্টিনেশন</p>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h2>অনলাইন পেমেন্ট</h2>
+            <p>আমাদের সুরক্ষিত পেমেন্ট সিস্টেম ব্যবহার করে আপনার অর্ডার সম্পন্ন করুন</p>
+            <button id="openPaymentForm" class="payment-button">পেমেন্ট করুন</button>
+            <div class="secure-badge">
+                <i class="fas fa-lock"></i> সুরক্ষিত পেমেন্ট গেটওয়ে
+            </div>
+        </div>
+
+        <!-- Payment Form Modal -->
+        <div id="paymentFormModal" class="modal">
+            <div class="modal-content">
+                <button id="closePaymentForm" class="close-button">&times;</button>
+                <h3 class="modal-title">পেমেন্ট তথ্য</h3>
+                
+                <!-- Hadith Quote -->
+                <div class="hadith-box">
+                    <p class="hadith-title">আল-হাদীস:</p>
+                    <p class="hadith-text">"প্রকৃত মুমিন তারাই, যারা পাওনাদারের ঋণ দ্রুত পরিশোধ করে।"</p>
+                </div>
+                
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="name">আপনার নাম</label>
+                        <input type="text" id="name" class="form-control" placeholder="নাম লিখুন">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">ফোন নাম্বার</label>
+                        <input type="text" id="phone" class="form-control" placeholder="যে নাম্বার থেকে পেমেন্ট করবেন">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">টাকার পরিমাণ</label>
+                        <input type="number" id="amount" class="form-control" placeholder="কত টাকা পেমেন্ট করবেন">
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">পেমেন্ট পদ্ধতি</label>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="send-money">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Money</span>
+                            </div>
+                            <div class="payment-method" data-method="payment">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Payment</span>
+                            </div>
+                            <div class="payment-method" data-method="card">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Card</span>
+                            </div>
+                        </div>
+                        <select id="paymentMethod" style="display: none;">
+                            <option value="send-money">Send Money</option>
+                            <option value="payment">Payment</option>
+                            <option value="card">Card</option>
+                        </select>
+                    </div>
+                    <button type="button" id="showPaymentOptions" class="submit-button">পেমেন্ট অপশন দেখুন</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Payment Options Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <button id="closeModal" class="close-button">&times;</button>
+                <h3 class="modal-title">পেমেন্ট অপশন</h3>
+
+                <!-- Send Money Options -->
+                <div id="sendMoneyOptions" class="payment-options">
+                    <div class="terms-box">
+                        <div class="terms-title"><i class="fas fa-exclamation-triangle"></i> গুরুত্বপূর্ণ নির্দেশনা (Terms & Conditions):</div>
+                        <p>- সেন্ড মানি বা পেমেন্ট ছাড়া রিচার্জ দিলে দায়ভার আপনাকেই নিতে হবে।</p>
+                        <p>- আপনার পছন্দমত পেমেন্ট অপশন থেকে নাম্বার কপি করে অ্যাপস থেকে সেন্ড মানি বা পেমেন্ট করুন অথবা সরাসরি পেমেন্ট অপশন থেকে পেমেন্ট করে পেমেন্ট সম্পন্ন বাটনে ক্লিক করুন। পেমেন্ট সম্পন্ন বাটনে ক্লিক না করলে পেমেন্টের স্ক্রিনশট প্রদান বাধ্যতামূলক।</p>
+                        <p>- ভুল তথ্য দিয়ে পেমেন্ট করলে বা ভুল নম্বরে সেন্ড মানি করলে, কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না।</p>
+                    </div>
+                    
+                    <!-- bKash -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/bkash.png" alt="bKash" class="payment-option-logo">
+                            <h4 class="payment-option-title">bKash</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>01886191222</span>
+                                <button class="copy-number" data-number="01886191222"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এই নাম্বারে শুধু সেন্ড-মানি করুন।</p>
+                        </div>
+                    </div>
+
+                    <!-- Nagad -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/nagad.png" alt="Nagad" class="payment-option-logo">
+                            <h4 class="payment-option-title">Nagad</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>01886191222</span>
+                                <button class="copy-number" data-number="01886191222"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এই নাম্বারে শুধু সেন্ড-মানি করুন।</p>
+                        </div>
+                    </div>
+
+                    <!-- Upay -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/upay.png" alt="Upay" class="payment-option-logo">
+                            <h4 class="payment-option-title">Upay</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>01886191222</span>
+                                <button class="copy-number" data-number="01886191222"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এই নাম্বারে শুধু সেন্ড-মানি করুন।</p>
+                        </div>
+                    </div>
+
+                    <!-- Rocket -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/rocket.png" alt="Rocket" class="payment-option-logo">
+                            <h4 class="payment-option-title">Rocket</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>01886191222</span>
+                                <button class="copy-number" data-number="01886191222"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এই নাম্বারে শুধু সেন্ড-মানি করুন।</p>
+                        </div>
+                    </div>
+
+                    <!-- Cellfin -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/cellfin.png" alt="Cellfin" class="payment-option-logo">
+                            <h4 class="payment-option-title">Cellfin</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>0558068855</span>
+                                <button class="copy-number" data-number="0558068855"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এই নাম্বারে শুধু সেন্ড-মানি করুন।</p>
+                        </div>
+                    </div>
+
+                    <button id="completePayment" class="payment-button">পেমেন্ট সম্পন্ন</button>
+                </div>
+
+                <!-- Payment Options -->
+                <div id="paymentOptions" class="payment-options">
+                    <div class="terms-box">
+                        <div class="terms-title"><i class="fas fa-exclamation-triangle"></i> গুরুত্বপূর্ণ নির্দেশনা (Terms & Conditions):</div>
+                        <p>- সেন্ড মানি বা পেমেন্ট ছাড়া রিচার্জ দিলে দায়ভার আপনাকেই নিতে হবে।</p>
+                        <p>- আপনার পছন্দমত পেমেন্ট অপশন থেকে নাম্বার কপি করে অ্যাপস থেকে সেন্ড মানি বা পেমেন্ট করুন অথবা সরাসরি পেমেন্ট অপশন থেকে পেমেন্ট করে পেমেন্ট সম্পন্ন বাটনে ক্লিক করুন। পেমেন্ট সম্পন্ন বাটনে ক্লিক না করলে পেমেন্টের স্ক্রিনশট প্রদান বাধ্যতামূলক।</p>
+                        <p>- ভুল তথ্য দিয়ে পেমেন্ট করলে বা ভুল নম্বরে সেন্ড মানি করলে, কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না।</p>
+                    </div>
+                    
+                    <!-- bKash Payment -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/bkash.png" alt="bKash Payment" class="payment-option-logo">
+                            <h4 class="payment-option-title">bKash Payment</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <p>সরাসরি বিকাশ পেমেন্ট এর জন্য নিচে ক্লিক করুন।</p>
+                        </div>
+                        <div class="payment-option-footer">
+                            <a href="https://shop.bkash.com/mamunur-rashid-shop01793291222/paymentlink/default-payment" target="_blank" class="payment-option-button">পরিশোধ করি</a>
+                        </div>
+                    </div>
+
+                    <!-- Nagad/Rocket Payment -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/nagad.png" alt="Nagad/Rocket" class="payment-option-logo">
+                            <h4 class="payment-option-title">Nagad/Rocket</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <p>নগদ এবং রকেটে এইখানে সরাসরি পেমেন্ট করতে নিচের পরিশোধ করি বাটনে ক্লিক করুন।</p>
+                        </div>
+                        <div class="payment-option-footer">
+                            <a href="https://tally.pe/a6LhC" target="_blank" class="payment-option-button">পরিশোধ করি</a>
+                        </div>
+                    </div>
+
+                    <!-- Rocket/Nexus-pay/Bkash -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <img src="assets/official-logos/rocket.png" alt="Rocket/Nexus-pay/Bkash" class="payment-option-logo">
+                            <h4 class="payment-option-title">Rocket/Nexus-pay/Bkash</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span>01793291222</span>
+                                <button class="copy-number" data-number="01793291222"><i class="fas fa-copy"></i> কপি করুন</button>
+                            </div>
+                            <p>এইটা শুধু পেমেন্ট নাম্বর।</p>
+                        </div>
+                    </div>
+
+                    <!-- Bangla QR Payment -->
+                    <div class="payment-option">
+                        <div class="payment-option-header">
+                            <h4 class="payment-option-title">Bangla QR Payment</h4>
+                        </div>
+                        <div class="payment-option-content" style="text-align: center;">
+                            <img src="assets/bangla-qr.jpg" alt="Bangla QR Code" style="max-width: 200px; margin: 0 auto;">
+                        </div>
+                    </div>
+
+                    <button id="completePayment" class="payment-button">পেমেন্ট সম্পন্ন</button>
+                </div>
+
+                <!-- Card Options -->
+                <div id="cardOptions" class="payment-options">
+                    <div class="terms-box">
+                        <div class="terms-title"><i class="fas fa-exclamation-triangle"></i> গুরুত্বপূর্ণ নির্দেশনা (Terms & Conditions):</div>
+                        <p>- পেমেন্টের স্ক্রিনশট প্রদান বাধ্যতামূলক।</p>
+                        <p>- কার্ড পেমেন্ট (International বা Local) এর ক্ষেত্রে প্রসেসিং ফি ও ব্যাংক চার্জ প্রযোজ্য হবে।</p>
+                        <p>- কার্ড পেমেন্টে সামান্য অতিরিক্ত ফি যুক্ত হতে পারে, যা মোট পরিমাণে অটো অ্যাড হয়ে যাবে।</p>
+                    </div>
+                    
+                    <!-- Ziina Card Payment -->
+                    <div class="ziina-card-section">
+                        <div class="ziina-header">
+                            <img src="assets/official-logos/cards.jpg" alt="Ziina" class="ziina-logo">
+                            <h4 class="ziina-title">Ziina Card Payment</h4>
+                        </div>
+                        <div class="ziina-details">
+                            <p class="ziina-currency">কারেন্সি: AED</p>
+                            <p>আপনার কার্ড ব্যবহার করে সহজেই পেমেন্ট করুন</p>
+                            <p class="payment-instruction">পেমেন্ট করার পর পেমেন্ট সম্পন্ন বাটনে ক্লিক করুন।</p>
+                        </div>
+                        
+                        <a href="https://pay.ziina.com/mamunurrashidsh" target="_blank" class="payment-button">পরিশোধ করি</a>
+                        
+                        <button id="ziinaPay" class="ziina-button">পেমেন্ট সম্পন্ন</button>
+                        
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/logos/mastercard.jpg" alt="mastercard" class="card-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/logos/visa.jpg" alt="visa" class="card-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/logos/paypal.jpg" alt="paypal" class="card-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content success-modal">
+                <button class="close-button success-close">&times;</button>
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="success-title">পেমেন্ট সফল!</h3>
+                <p class="success-message">আপনার পেমেন্ট সফলভাবে সম্পন্ন হয়েছে। ধন্যবাদ!</p>
+                <div class="success-details" id="successDetails">
+                    <!-- Payment details will be inserted here -->
+                </div>
+                <button class="success-button success-close">ঠিক আছে</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/16grUwakfd/" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mamunur.rashid08?igsh=NGRtMnV1dTFzYzEz" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://m.me/mamunur.rashid08" class="social-link" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://wa.me/" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2025 Mamunur Rashid eShop. সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
