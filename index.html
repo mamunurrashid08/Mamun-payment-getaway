@@ -1,5 +1,3 @@
---- START OF FILE index.html ---
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -550,7 +548,7 @@
     <div class="minimax-logo-wave"></div>
     <span class="minimax-ball-text"></span>
   </div>
-  <div class="minimax-close-icon">×</div>
+  <div class="">×</div>
 </div>
 <script>
 // Initialize floating ball functionality
@@ -571,7 +569,7 @@ function initFloatingBall() {
   const ballContent = ball.querySelector('.minimax-ball-content');
   ballContent.addEventListener('click', function (e) {
     e.stopPropagation();
-    window.open('https://agent.minimax.io/agent', '_blank');
+    window.open('https://mamuneservice.com', '_blank');
     ball.style.transform = 'scale(0.95)';
     setTimeout(() => {
       ball.style.transform = 'scale(1)';
@@ -579,7 +577,7 @@ function initFloatingBall() {
   });
 
   // Handle close button click
-  const closeIcon = ball.querySelector('.minimax-close-icon');
+  const closeIcon = ball.querySelector('.');
   closeIcon.addEventListener('click', function (e) {
     e.stopPropagation();
     ball.style.opacity = '0';
