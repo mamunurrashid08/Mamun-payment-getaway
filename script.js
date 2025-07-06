@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 transactionId: document.getElementById('successTransactionId').textContent
             };
             
-            const message = `🎉 পেমেন্ট সফল হয়েছে!\n\n📝 বিবরণ:\n👤 নাম: ${formData.name}\n📱 ফোন: ${formData.phone}\n💰 পরিমাণ: ${formData.amount} টাকা\n💳 মাধ্যম: ${formData.method}\n🔢 ট্রানজেকশন ID: ${formData.transactionId}\n\n✅ SHAH IMRAN - আপনার বিশ্বস্ত সেবা`;
+            const message = `🎉 পেমেন্ট সফল হয়েছে!\n\n📝 বিবরণ:\n👤 নাম: ${formData.name}\n📱 ফোন: ${formData.phone}\n💰 পরিমাণ: ${formData.amount} টাকা\n💳 মাধ্যম: ${formData.method}\n🔢 ট্রানজেকশন ID: ${formData.transactionId}\n\n✅ RAMIJ HOSSEN - আপনার বিশ্বস্ত সেবা`;
             
             const whatsappUrl = `https://wa.me/8801301363728?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
@@ -641,7 +641,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 transactionId: document.getElementById('successTransactionId').textContent
             };
             
-            const message = `🎉 পেমেন্ট সফল হয়েছে!\n\n📝 বিবরণ:\n👤 নাম: ${formData.name}\n📱 ফোন: ${formData.phone}\n💰 পরিমাণ: ${formData.amount} টাকা\n💳 মাধ্যম: ${formData.method}\n🔢 ট্রানজেকশন ID: ${formData.transactionId}\n\n✅ SHAH IMRAN - আপনার বিশ্বস্ত সেবা`;
+            const message = `🎉 পেমেন্ট সফল হয়েছে!\n\n📝 বিবরণ:\n👤 নাম: ${formData.name}\n📱 ফোন: ${formData.phone}\n💰 পরিমাণ: ${formData.amount} টাকা\n💳 মাধ্যম: ${formData.method}\n🔢 ট্রানজেকশন ID: ${formData.transactionId}\n\n✅ RAMIJ HOSSEN - আপনার বিশ্বস্ত সেবা`;
             
             copyToClipboard(message);
         });
