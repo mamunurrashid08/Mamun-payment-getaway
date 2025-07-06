@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAH IMRAN - পেমেন্ট পেজ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Prevent branding injection -->
+    <style>
+        [class*="made-with-manus"], [id*="made-with-manus"], 
+        [class*="manus-branding"], [id*="manus-branding"],
+        [class*="manus-badge"], [id*="manus-badge"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            position: absolute !important;
+            z-index: -9999 !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header card-3d">
+            <div class="logo-container">
+                <img src="assets/mr-logo.jpg" alt="Mamunur Rashid eShop Logo" class="logo">
+                <div class="logo-glow"></div>
+            </div>
+            <h1 class="main-title">
+                <span class="title-gradient">SHAH IMRAN</span>
+                <div class="title-underline"></div>
+            </h1>
+            <p class="subtitle pulse-animation">আপনার বিশ্বস্ত অনলাইন সেবার ডেস্টিনেশন</p>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section card-3d">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-credit-card icon-3d"></i>
+                    অনলাইন পেমেন্ট
+                </h2>
+                <p class="section-description">আমাদের সুরক্ষিত পেমেন্ট সিস্টেম ব্যবহার করে আপনার অর্ডার সম্পন্ন করুন</p>
+            </div>
+            
+            <div class="payment-button-container">
+                <div id="openPaymentForm" class="payment-button btn-3d" role="button" tabindex="0">
+                    <span class="btn-text">পেমেন্ট করুন</span>
+                    <div class="btn-glow"></div>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </div>
+            </div>
+            
+            <div class="secure-badge badge-3d">
+                <i class="fas fa-shield-halved security-icon"></i>
+                <span>সুরক্ষিত পেমেন্ট গেটওয়ে</span>
+                <div class="security-pulse"></div>
+            </div>
+        </div>
+
+        <!-- Payment Form Modal -->
+        <div id="paymentFormModal" class="modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content card-3d">
+                <button id="closePaymentForm" class="close-button btn-hover-3d">&times;</button>
+                <h3 class="modal-title">
+                    <i class="fas fa-wallet"></i>
+                    পেমেন্ট তথ্য
+                </h3>
+                
+                <!-- Hadith Quote -->
+                <div class="hadith-box card-3d">
+                    <div class="hadith-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="hadith-title">আল-হাদীস:</p>
+                    <p class="hadith-text">"প্রকৃত মুমিন তারাই, যারা পাওনাদারের ঋণ দ্রুত পরিশোধ করে।"</p>
+                </div>
+                
+                <form id="paymentForm" class="payment-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user"></i>
+                            আপনার নাম
+                        </label>
+                        <input type="text" id="name" class="form-control input-3d" placeholder="নাম লিখুন">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">
+                            <i class="fas fa-mobile-alt"></i>
+                            আপনার পেমেন্টের নাম্বার
+                        </label>
+                        <input type="text" id="phone" class="form-control input-3d" placeholder="যে নাম্বার থেকে পেমেন্ট করবেন">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount" class="form-label">
+                            <i class="fas fa-money-bill-wave"></i>
+                            টাকার পরিমাণ
+                        </label>
+                        <input type="number" id="amount" class="form-control input-3d" placeholder="কত টাকা পেমেন্ট করবেন">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod" class="form-label">
+                            <i class="fas fa-credit-card"></i>
+                            পেমেন্ট পদ্ধতি
+                        </label>
+                        <div class="payment-methods">
+                            <div class="payment-method active card-hover-3d" data-method="send-money">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Money</span>
+                                <div class="method-glow"></div>
+                            </div>
+                            <div class="payment-method card-hover-3d" data-method="payment">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Payment</span>
+                                <div class="method-glow"></div>
+                            </div>
+                        </div>
+                        <select id="paymentMethod" style="display: none;">
+                            <option value="send-money">Send Money</option>
+                            <option value="payment">Payment</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="showPaymentOptions" class="submit-button btn-3d">
+                        <span>পেমেন্ট অপশন দেখুন</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Payment Options Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content payment-modal-content card-3d">
+                <button id="closeModal" class="close-button btn-hover-3d">&times;</button>
+                
+                <!-- Tab Navigation -->
+                <div class="payment-tabs">
+                    <div class="tab-item active card-hover-3d" data-tab="send-money">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Send Money</span>
+                        <div class="tab-indicator"></div>
+                    </div>
+                    <div class="tab-item card-hover-3d" data-tab="payment">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Payment</span>
+                        <div class="tab-indicator"></div>
+                    </div>
+                </div>
+
+                <!-- Send Money Options -->
+                <div id="sendMoneyOptions" class="payment-options tab-content active">
+                    <div class="terms-box card-3d">
+                        <div class="terms-header">
+                            <i class="fas fa-exclamation-triangle warning-icon"></i>
+                            <span class="terms-title">গুরুত্বপূর্ণ নির্দেশনা (Terms & Conditions):</span>
+                        </div>
+                        <div class="terms-content">
+                            <p>- সেন্ড মানি বা পেমেন্ট ছাড়া রিচার্জ দিলে দায়ভার আপনাকেই নিতে হবে।</p>
+                            <p>- আপনার পছন্দমত পেমেন্ট অপশন থেকে নাম্বার কপি করে অ্যাপস থেকে সেন্ড মানি বা পেমেন্ট করুন অথবা সরাসরি পেমেন্ট অপশন থেকে পেমেন্ট করে পেমেন্ট সম্পন্ন বাটনে ক্লিক করুন। পেমেন্ট সম্পন্ন বাটনে ক্লিক না করলে পেমেন্টের স্ক্রিনশট প্রদান বাধ্যতামূলক।</p>
+                            <p>- ভুল তথ্য দিয়ে পেমেন্ট করলে বা ভুল নম্বরে সেন্ড মানি করলে, কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না।</p>
+                        </div>
+                    </div>
+                    
+                    <!-- bKash -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/bkash.png" alt="bKash" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">bKash</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span class="number-display">01822328981</span>
+                                <button class="copy-number btn-3d" data-number="01822328981">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <p class="payment-info">এইটা শুধু সেন্ড-মানি/ ক্যাশ-ইন নম্বর</p>
+                            <a href="bkash://" class="app-open-button btn-3d" data-app="bkash">
+                                <i class="fas fa-mobile-alt"></i> Open bKash app
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Nagad -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/nagad.png" alt="Nagad" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">Nagad</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span class="number-display">01822328981</span>
+                                <button class="copy-number btn-3d" data-number="01822328981">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <p class="payment-info">এইটা শুধু সেন্ড-মানি/ ক্যাশ-ইন নম্বর</p>
+                            <a href="nagad://" class="app-open-button btn-3d" data-app="nagad">
+                                <i class="fas fa-mobile-alt"></i> Open Nagad app
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Upay -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/upay.png" alt="Upay" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">Upay</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span class="number-display">01822328981</span>
+                                <button class="copy-number btn-3d" data-number="01965255697">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <p class="payment-info">এইটা শুধু সেন্ড-মানি/ ক্যাশ-ইন নম্বর</p>
+                            <a href="upay://" class="app-open-button btn-3d" data-app="upay">
+                                <i class="fas fa-mobile-alt"></i> Open Upay app
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Rocket -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/rocket.png" alt="Rocket" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">Rocket</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span class="number-display">01822328981</span>
+                                <button class="copy-number btn-3d" data-number="01965255697">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <p class="payment-info">এইটা শুধু সেন্ড-মানি/ ক্যাশ-ইন নম্বর</p>
+                            <a href="rocket://" class="app-open-button btn-3d" data-app="rocket">
+                                <i class="fas fa-mobile-alt"></i> Open Rocket app
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cellfin -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/cellfin.png" alt="Cellfin" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">Cellfin</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <div class="payment-number">
+                                <span class="number-display">01609020997</span>
+                                <button class="copy-number btn-3d" data-number="01609020997">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <p class="payment-info">এইটা শুধু সেন্ড-মানি/ ক্যাশ-ইন নম্বর</p>
+                            <a href="cellfin://" class="app-open-button btn-3d" data-app="cellfin">
+                                <i class="fas fa-mobile-alt"></i> Open Cellfin app
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="form-group transaction-id-field">
+                        <label for="sendMoneyTransactionId" class="form-label">
+                            <i class="fas fa-receipt"></i>
+                            ট্রানজেকশন আইডি/অর্ডার আইডি
+                        </label>
+                        <input type="text" id="sendMoneyTransactionId" class="form-control input-3d" placeholder="ট্রানজেকশন আইডি লিখুন">
+                    </div>
+                    
+                    <button id="completeSendMoneyPayment" class="payment-complete-button btn-3d">
+                        <span>পেমেন্ট সম্পন্ন</span>
+                        <i class="fas fa-check-circle"></i>
+                    </button>
+                </div>
+
+                <!-- Payment Options -->
+                <div id="paymentOptions" class="payment-options tab-content">
+                    <div class="terms-box card-3d">
+                        <div class="terms-header">
+                            <i class="fas fa-exclamation-triangle warning-icon"></i>
+                            <span class="terms-title">গুরুত্বপূর্ণ নির্দেশনা (Terms & Conditions):</span>
+                        </div>
+                        <div class="terms-content">
+                            <p>- সেন্ড মানি বা পেমেন্ট ছাড়া রিচার্জ দিলে দায়ভার আপনাকেই নিতে হবে।</p>
+                            <p>- আপনার পছন্দমত পেমেন্ট অপশন থেকে নাম্বার কপি করে অ্যাপস থেকে সেন্ড মানি বা পেমেন্ট করুন অথবা সরাসরি পেমেন্ট অপশন থেকে পেমেন্ট করে পেমেন্ট সম্পন্ন বাটনে ক্লিক করুন। পেমেন্ট সম্পন্ন বাটনে ক্লিক না করলে পেমেন্টের স্ক্রিনশট প্রদান বাধ্যতামূলক।</p>
+                            <p>- ভুল তথ্য দিয়ে পেমেন্ট করলে বা ভুল নম্বরে সেন্ড মানি করলে, কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না।</p>
+                        </div>
+                    </div>
+                    
+                    <!-- bKash Payment -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/bkash.png" alt="bKash Payment" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">bKash Payment</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <p class="payment-info">সরাসরি বিকাশ পেমেন্ট এর জন্য নিচে ক্লিক করুন।</p>
+                        </div>
+                        <div class="payment-option-footer">
+                            <a href="https://shop.bkash.com/afifa--adifa-enterprises019652/paymentlink" target="_blank" class="payment-option-button btn-3d">
+                                <i class="fas fa-money-bill-wave"></i> bKash Payment করুন
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Nagad Payment -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <div class="logo-wrapper">
+                                <img src="assets/official-logos/nagad.png" alt="Nagad Payment" class="payment-option-logo">
+                                <div class="logo-glow-effect"></div>
+                            </div>
+                            <h4 class="payment-option-title">Nagad Payment</h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <p class="payment-info">সরাসরি নগদ পেমেন্ট এর জন্য নিচে ক্লিক করুন।</p>
+                        </div>
+                        <div class="payment-option-footer">
+                            <a href="https://tally.pe/M7Ea" target="_blank" class="payment-option-button btn-3d">
+                                <i class="fas fa-money-bill-wave"></i> Nagad Payment করুন
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bank Transfer -->
+                    <div class="payment-option card-3d card-hover-3d">
+                        <div class="payment-option-header">
+                            <h4 class="payment-option-title">
+                                <i class="fas fa-bank"></i>
+                                Bank Transfer
+                            </h4>
+                        </div>
+                        <div class="payment-option-content">
+                            <p><strong>Islami Bank Bangladesh PLC</strong></p>
+                            <p><strong>Account Number:</strong> 20501250206530616 <button class="copy-number btn-3d" data-number="20501250206530616"><i class="fas fa-copy"></i> কপি করুন</button></p>
+                            <p><strong>BRANCH NAME:</strong> JESSORE BRANCH JESSORE <button class="copy-number btn-3d" data-number="JESSORE BRANCH JESSORE"><i class="fas fa-copy"></i> কপি করুন</button></p>
+                            <p><strong>Routing Number:</strong> 125410946 <button class="copy-number btn-3d" data-number="125410946"><i class="fas fa-copy"></i> কপি করুন</button></p>
+                            <p><strong>Account Holder Name:</strong> RAMIJ HOSSEN <button class="copy-number btn-3d" data-number="RAMIJ HOSSEN"><i class="fas fa-copy"></i> কপি করুন</button></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group transaction-id-field">
+                        <label for="paymentTransactionId" class="form-label">
+                            <i class="fas fa-receipt"></i>
+                            ট্রানজেকশন আইডি/অর্ডার আইডি
+                        </label>
+                        <input type="text" id="paymentTransactionId" class="form-control input-3d" placeholder="ট্রানজেকশন আইডি লিখুন">
+                    </div>
+                    
+                    <button id="completeDirectPayment" class="payment-complete-button btn-3d">
+                        <span>পেমেন্ট সম্পন্ন</span>
+                        <i class="fas fa-check-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content success-modal-content card-3d">
+                <button class="close-button success-close btn-hover-3d">&times;</button>
+                
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="success-pulse"></div>
+                </div>
+                
+                <h3 class="success-title">পেমেন্ট সফল হয়েছে!</h3>
+                
+                <div class="success-details card-3d" id="successDetails">
+                    <p><strong>নাম:</strong> <span id="successName"></span></p>
+                    <p><strong>পেমেন্টকৃত নাম্বার:</strong> <span id="successPhone"></span></p>
+                    <p><strong>পরিমাণ:</strong> <span id="successAmount"></span> টাকা</p>
+                    <p><strong>পেমেন্ট মেথড:</strong> <span id="successMethod"></span></p>
+                    <p><strong>ট্রানজেকশন আইডি:</strong> <span id="successTransactionId"></span></p>
+                </div>
+                
+                <!-- WhatsApp Share and Copy Buttons -->
+                <div class="whatsapp-buttons-container">
+                    <button id="shareWhatsapp" class="share-button whatsapp btn-3d">
+                        <i class="fab fa-whatsapp"></i> WhatsApp এ শেয়ার করুন
+                    </button>
+                    <button id="copyWhatsappLink" class="copy-button btn-3d">
+                        <i class="fas fa-copy"></i> কপি করুন
+                    </button>
+                </div>
+                
+                <div class="share-options">
+                    <h4>অন্যান্য শেয়ার অপশন</h4>
+                    <div class="share-buttons">
+                        <button id="shareMessenger" class="share-button messenger btn-3d">
+                            <i class="fab fa-facebook-messenger"></i> Messenger
+                        </button>
+                        <button id="shareImo" class="share-button imo btn-3d">
+                            <i class="fas fa-comment-dots"></i> IMO
+                        </button>
+                        <button id="shareSms" class="share-button sms btn-3d">
+                            <i class="fas fa-sms"></i> SMS
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="success-button success-close btn-3d">ঠিক আছে</button>
+            </div>
+        </div>
+
+        <!-- Our Services Section -->
+        <div class="our-services-section card-3d">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-concierge-bell icon-3d"></i>
+                    আমাদের সেবা সমূহ
+                </h2>
+                <p class="section-description">আমাদের থেকে যেকোনো সময় বাংলাদেশের যে কোন ফ্রেন্ড রুমিন করতে পারবেন ব্রিলিয়ান্ট রিচার্জ করতে পারবেন গ্লোবাল রিচার্জ করতে পারবেন।</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer card-3d">
+            <div class="footer-content">
+                <div class="developer-text">প্রস্তুতকারক</div>
+                <div class="social-links">
+                    <a href="https://facebook.com/mamunurrashideshop" target="_blank" class="social-link btn-hover-3d">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/8801886191222" target="_blank" class="social-link btn-hover-3d">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://m.me/mamunurrashideshop" target="_blank" class="social-link btn-hover-3d">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Mamunur Rashid eShop. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 26px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='22' viewBox='0 0 26 22' fill='none'%3E%3Cg clip-path='url(%23clip0_3442_102412)'%3E%3Cpath d='M12.8405 14.6775C12.8405 14.9897 13.0932 15.2424 13.4055 15.2424C13.7178 15.2424 13.9705 14.9897 13.9705 14.6775V2.98254C13.9705 1.88957 13.0809 1 11.9879 1C10.895 1 10.0054 1.88957 10.0054 2.98254V11.566V17.1068C10.0054 17.5773 9.62327 17.9594 9.1528 17.9594C8.68233 17.9594 8.30021 17.5773 8.30021 17.1068V8.04469C8.30021 6.95172 7.41063 6.06215 6.31767 6.06215C5.22471 6.06215 4.33513 6.95172 4.33513 8.04469V11.8855C4.33513 12.3559 3.953 12.7381 3.48254 12.7381C3.01207 12.7381 2.62994 12.3559 2.62994 11.8855V10.4936C2.62994 10.1813 2.37725 9.92861 2.06497 9.92861C1.7527 9.92861 1.5 10.1813 1.5 10.4936V11.8855C1.5 12.9784 2.38957 13.868 3.48254 13.868C4.5755 13.868 5.46508 12.9784 5.46508 11.8855V8.04469C5.46508 7.57422 5.8472 7.19209 6.31767 7.19209C6.78814 7.19209 7.17026 7.57422 7.17026 8.04469V17.1068C7.17026 18.1998 8.05984 19.0894 9.1528 19.0894C10.2458 19.0894 11.1353 18.1998 11.1353 17.1068V2.98254C11.1353 2.51207 11.5175 2.12994 11.9879 2.12994C12.4584 2.12994 12.8405 2.51207 12.8405 2.98254V14.6775Z' fill='%23F8F8F8'/%3E%3Cpath d='M23.3278 6.06215C22.2348 6.06215 21.3452 6.95172 21.3452 8.04469V15.6143C21.3452 16.0847 20.9631 16.4669 20.4926 16.4669C20.0222 16.4669 19.6401 16.0847 19.6401 15.6143V2.98254C19.6401 1.88957 18.7505 1 17.6575 1C16.5645 1 15.675 1.88957 15.675 2.98254V19.0175C15.675 19.4879 15.2928 19.8701 14.8224 19.8701C14.3519 19.8701 13.9698 19.4879 13.9698 19.0175V17.0329C13.9698 16.7206 13.7171 16.4679 13.4048 16.4679C13.0925 16.4679 12.8398 16.7206 12.8398 17.0329V19.0175C12.8398 20.1104 13.7294 21 14.8224 21C15.9153 21 16.8049 20.1104 16.8049 19.0175V2.98254C16.8049 2.51207 17.187 2.12994 17.6575 2.12994C18.128 2.12994 18.5101 2.51207 18.5101 2.98254V15.6143C18.5101 16.7072 19.3997 17.5968 20.4926 17.5968C21.5856 17.5968 22.4752 16.7072 22.4752 15.6143V8.04469C22.4752 7.57422 22.8573 7.19209 23.3278 7.19209C23.7982 7.19209 24.1804 7.57422 24.1804 8.04469V14.6775C24.1804 14.9897 24.4331 15.2424 24.7453 15.2424C25.0576 15.2424 25.3103 14.9897 25.3103 14.6775V8.04469C25.3103 6.95172 24.4207 6.06215 23.3278 6.06215Z' fill='%23F8F8F8'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3442_102412'%3E%3Crect width='25' height='22' fill='white' transform='translate(0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.io/agent', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+
+</body>
+</html>
