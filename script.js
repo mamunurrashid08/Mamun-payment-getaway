@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const message = `🎉 পেমেন্ট সফল হয়েছে!\n\n📝 বিবরণ:\n👤 নাম: ${formData.name}\n📱 ফোন: ${formData.phone}\n💰 পরিমাণ: ${formData.amount} টাকা\n💳 মাধ্যম: ${formData.method}\n🔢 ট্রানজেকশন ID: ${formData.transactionId}\n\n✅ SHAH IMRAN - আপনার বিশ্বস্ত সেবা`;
             
-            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/8801301363728?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
     }
